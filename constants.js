@@ -29,12 +29,12 @@ export const steps = {
       title: "Step 1",
       description: "Define and Validate a JSON Schema(Draft 2020-12).",
       schema: {
-        $schema: "https://json-schema.org/draft/2020-12/schema",
         type: "object",
         properties: {
-          // Define properties specific to Step 1 schema if needed
+          name: { type: "string" },
+          age: { type: "number" },
         },
-        required: ["$schema", "type"],
+        required: ["name", "age"],
       },
     },
     {
@@ -42,7 +42,6 @@ export const steps = {
       title: "Step 2",
       description: "Define an Array Schema with Number Items.",
       schema: {
-        $schema: "https://json-schema.org/draft/2020-12/schema",
         type: "array",
         items: {
           type: "number",
