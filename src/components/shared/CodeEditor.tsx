@@ -10,6 +10,7 @@ import { steps } from "../../../constants";
 import { Button } from "../ui/button";
 import ZSchema from "z-schema";
 import toast from "react-hot-toast";
+import { AiOutlineClear } from "react-icons/ai";
 
 interface Props {
   step: number;
@@ -100,6 +101,16 @@ const CodeEditor: React.FC<Props> = ({ step }) => {
       />
       <Button className="mt-3" onClick={validateJSON}>
         Validate
+      </Button>
+      <Button
+        variant="ghost"
+        size="icon"
+        className="top-3 right-2 absolute"
+        onClick={() => {
+          setValue("");
+        }}
+      >
+        <AiOutlineClear size={18} />
       </Button>
       <h2 className="mt-3 font-bold text-xl">Code Status</h2>
       {isValid ? (
