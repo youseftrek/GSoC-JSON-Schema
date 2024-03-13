@@ -27,7 +27,8 @@ const CodeEditor: React.FC<Props> = ({ step }) => {
 
   const validateJSON = () => {
     const currentStepSchema = steps.tasks[step - 1].schema;
-    const validator = new ZSchema();
+    const options = {};
+    const validator = new ZSchema(options);
     try {
       const jsonVal = JSON.parse(value);
       console.log(currentStepSchema, jsonVal);
