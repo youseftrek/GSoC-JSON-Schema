@@ -11,7 +11,11 @@ import { Button } from "../ui/button";
 import ZSchema from "z-schema";
 import toast from "react-hot-toast";
 
-const CodeEditor = ({ step }) => {
+interface Props {
+  step: number;
+}
+
+const CodeEditor: React.FC<Props> = ({ step }) => {
   const { theme } = useTheme();
   const [value, setValue] = useState<string>("your code here");
   const [isValid, setIsValid] = useState<boolean>();
